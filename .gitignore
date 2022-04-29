@@ -49,7 +49,7 @@ argfile*
 pom.xml
 activemq-data/
 
-classes/
+component.classes/
 /build
 buildSrc/build
 /spring-*/build

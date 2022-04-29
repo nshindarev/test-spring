@@ -1,4 +1,4 @@
-package interfaces;
+package component.interfaces;
 
 public interface Pet {
     void voice();
