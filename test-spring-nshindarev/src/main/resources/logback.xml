@@ -9,7 +9,7 @@
         </layout>
     </appender>
 
-    <logger name="com.nshindarev" level="debug" additivity="false">
+    <logger name="com.nshindarev" level="DEBUG" additivity="false">
         <appender-ref ref="CONSOLE"/>
     </logger>
     <root level="INFO">
