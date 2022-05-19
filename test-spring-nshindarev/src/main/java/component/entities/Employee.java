@@ -1,9 +1,6 @@
 package component.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "employees")
@@ -20,6 +17,11 @@ public class Employee {
     private String department;
     @Column(name="salary")
     private int salary;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "details_id")
+    private Details empDetails;
+
 
     public Employee(){
 
@@ -41,6 +43,10 @@ public class Employee {
                 ", department='" + department + '\'' +
                 ", salary=" + salary +
                 '}';
+    }
+
+    public void setEmpDetails(Details empDetails) {
+        this.empDetails = empDetails;
     }
 
     public int getId() {
@@ -82,4 +88,6 @@ public class Employee {
     public void setSalary(int salary) {
         this.salary = salary;
     }
+
+
 }

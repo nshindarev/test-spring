@@ -13,13 +13,16 @@ public class Details {
 
     @Column(name="city")
     private String city;
-    @Column(name="phoneNumber")
+    @Column(name="phone_number")
     private String phoneNumber;
     @Column(name="email")
     private String email;
 
-    public Details(int id, String city, String phoneNumber, String email) {
-        this.id = id;
+    @OneToOne(mappedBy = "empDetails", cascade = CascadeType.ALL)
+    private Employee employee;
+
+
+    public Details(String city, String phoneNumber, String email) {
         this.city = city;
         this.phoneNumber = phoneNumber;
         this.email = email;
@@ -43,4 +46,14 @@ public class Details {
     public String getEmail() {
         return email;
     }
+
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
 }
